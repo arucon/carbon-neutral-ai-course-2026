@@ -1,0 +1,11 @@
+jupyterlab>=4.2,<5
+ipykernel>=6.29,<7
+nbformat>=5.10,<6
+nbclient>=0.10,<1
+numpy>=1.26,<3
+pandas>=2.2,<4
+matplotlib>=3.8,<4
+seaborn>=0.13,<1
+scikit-learn>=1.5,<2
+statsmodels>=0.14,<1
+certifi>=2024.8

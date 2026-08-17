@@ -1,0 +1,18 @@
+# Generated when learners run the setup and course notebooks
+data/
+artifacts/
+
+# Jupyter and Python environments
+.ipynb_checkpoints/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# Local credentials and editor settings
+.env
+.env.*
+!.env.example
+.DS_Store
+.idea/
+.vscode/

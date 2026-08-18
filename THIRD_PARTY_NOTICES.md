@@ -49,3 +49,14 @@ License: https://creativecommons.org/licenses/by/4.0/
 - EIA `INTL.zip` SHA-256 at access: `6e7878db3fa961f71dcb10d10104a499536a5dfcfe6af1918c9672f18806151d`
 
 공개자료의 최신 버전은 시간이 지나며 바뀔 수 있습니다. 수업 재현에는 배포본의 고정 snapshot을 사용하고, 최신 자료로 갱신했다면 접근일과 변경된 결과를 별도로 기록합니다.
+
+## Day 3 초급 확장 과정
+
+`day3_beginner/data`에는 다음 공개자료와 그 수업용 변환본이 포함됩니다.
+
+- UCI Energy Efficiency, Concrete Compressive Strength, Occupancy Detection: CC BY 4.0
+- NASA POWER Daily·Climatology API의 기상·기후 격자자료
+- Open-Meteo Historical Weather API의 ERA5·ERA5-Land 계열 요약자료: CC BY 4.0
+- geoBoundaries KOR ADM2 경계자료: CC BY 3.0
+
+각 파일의 원자료, DOI·API, 공간·시간 범위와 변환 내용은 [`day3_beginner/data/DATA_SOURCES.md`](day3_beginner/data/DATA_SOURCES.md)에 기록했습니다. 과정의 CC BY 4.0 라이선스는 위 제3자 자료의 원래 이용조건을 대체하지 않습니다.

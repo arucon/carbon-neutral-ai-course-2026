@@ -1,6 +1,6 @@
 # Generated when learners run the setup and course notebooks
-data/
-artifacts/
+/data/
+/artifacts/
 
 # Jupyter and Python environments
 .ipynb_checkpoints/

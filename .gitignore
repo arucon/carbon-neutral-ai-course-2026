@@ -1,6 +1,7 @@
 # Generated when learners run the setup and course notebooks
 /data/
 /artifacts/
+/day3_beginner/output/
 
 # Jupyter and Python environments
 .ipynb_checkpoints/

@@ -46,9 +46,9 @@ Python **3.12**를 권장합니다. IDE는 아래에서 **하나만 선택**합�
 | 11교시 | 연구 문제 정의와 분석 스프린트 | [11_research_sprint_follow.ipynb](day2/11_research_sprint_follow.ipynb) | [11_research_sprint_practice.ipynb](day2/11_research_sprint_practice.ipynb) |
 | 12교시 | 연구 결과 보고와 재현성 | [12_reporting_reproducibility_follow.ipynb](day2/12_reporting_reproducibility_follow.ipynb) | [12_reporting_reproducibility_practice.ipynb](day2/12_reporting_reproducibility_practice.ipynb) |
 
-## Day 3 초급 데이터 분석 확장 과정
+## Day 3 초급 데이터 분석 22시간 과정
 
-데이터 분석 경험이 적은 수강생을 위한 셀 단위 실습 과정입니다. 코드 셀 하나에서 한 가지 작업을 수행하고, 바로 다음 셀에서 표나 그림을 확인합니다. 데이터 읽기부터 통계, 회귀·분류, 기상자료와 지도, 종합 프로젝트까지 순서대로 이어집니다.
+데이터 분석 경험이 적은 수강생을 위한 셀 단위 실습 과정입니다. 코드 셀 하나에서 한 가지 작업을 수행하고, 바로 다음 셀에서 표나 그림을 확인합니다. 데이터 읽기부터 통계, 회귀·분류, 기상자료와 지도, 종합 프로젝트까지 순서대로 이어집니다. 마지막에는 기상청 초단기예보 JSON을 pandas 표와 그래프로 바꾸고 로컬 Streamlit 웹앱에 연결합니다.
 
 | 순서 | 주제 | Notebook |
 |---:|---|---|
@@ -74,8 +74,11 @@ Python **3.12**를 권장합니다. IDE는 아래에서 **하나만 선택**합�
 | 19 | 기상자료의 시간 패턴 | [19_weather_time_patterns.ipynb](day3_beginner/notebooks/19_weather_time_patterns.ipynb) |
 | 20 | 공간적으로 가까운 지역 비교 | [20_spatial_autocorrelation.ipynb](day3_beginner/notebooks/20_spatial_autocorrelation.ipynb) |
 | 21 | 전공 데이터 분석 프로젝트 | [21_final_project.ipynb](day3_beginner/notebooks/21_final_project.ipynb) |
+| 22 | 기상청 API에서 로컬 웹앱까지 | [22_kma_weather_local_webapp.ipynb](day3_beginner/notebooks/22_kma_weather_local_webapp.ipynb) |
 
 사용 데이터의 출처와 이용조건은 [Day 3 데이터 출처](day3_beginner/data/DATA_SOURCES.md)에서 확인할 수 있습니다.
+
+22번 프로젝트의 설치·실행 명령은 [로컬 웹앱 안내](day3_beginner/apps/kma_weather_local/README.md)에 정리되어 있습니다.
 
 ## 폴더에서 직접 열 파일
 
@@ -84,6 +87,7 @@ Python **3.12**를 권장합니다. IDE는 아래에서 **하나만 선택**합�
 - `day1/*_practice.ipynb`, `day2/*_practice.ipynb`: 다른 데이터·조건으로 직접 적용하는 파일
 - `day3_beginner/notebooks/*.ipynb`: 초급 확장 과정의 셀 단위 실습 파일
 - `day3_beginner/data`: 초급 확장 과정에서 바로 읽는 데이터 파일
+- `day3_beginner/apps/kma_weather_local`: 기상청 예보를 표시하는 로컬 Streamlit 웹앱
 - `requirements.txt`: Python package 목록
 - `offline_data.zip`: 인터넷 장애 시 0교시가 자동으로 사용하는 예비자료. 직접 열지 않습니다.
 - `LICENSE`, `THIRD_PARTY_NOTICES.md`: 강의자료 라이선스와 공개 데이터의 출처·이용조건

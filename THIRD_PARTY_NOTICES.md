@@ -58,5 +58,6 @@ License: https://creativecommons.org/licenses/by/4.0/
 - NASA POWER Daily·Climatology API의 기상·기후 격자자료
 - Open-Meteo Historical Weather API의 ERA5·ERA5-Land 계열 요약자료: CC BY 4.0
 - geoBoundaries KOR ADM2 경계자료: CC BY 3.0
+- 기상청 APIHub 초단기예보 조회서비스의 JSON 응답 구조와 기상 항목 코드
 
 각 파일의 원자료, DOI·API, 공간·시간 범위와 변환 내용은 [`day3_beginner/data/DATA_SOURCES.md`](day3_beginner/data/DATA_SOURCES.md)에 기록했습니다. 과정의 CC BY 4.0 라이선스는 위 제3자 자료의 원래 이용조건을 대체하지 않습니다.

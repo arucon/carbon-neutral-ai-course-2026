@@ -1,0 +1,57 @@
+name: Validate course materials
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.12'
+      - name: Install course dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Validate notebooks and run lessons with the offline data
+        env:
+          MPLBACKEND: Agg
+        run: |
+          python - <<'PYTHON'
+          from pathlib import Path
+          from zipfile import ZipFile
+          import nbformat
+          from nbclient import NotebookClient
+
+          root = Path.cwd()
+          with ZipFile(root / 'offline_data.zip') as archive:
+              corrupt = archive.testzip()
+              if corrupt:
+                  raise ValueError(f'Corrupt offline data entry: {corrupt}')
+              archive.extractall(root)
+          paths = sorted(root.rglob('*.ipynb'))
+          if not paths:
+              raise RuntimeError('No course notebooks found')
+          for path in paths:
+              nbformat.validate(nbformat.read(path, as_version=4))
+          for lesson in ('01_pandas_research_data_follow.ipynb', '05_sklearn_pipeline_follow.ipynb'):
+              path = root / 'day1' / lesson
+              notebook = nbformat.read(path, as_version=4)
+              NotebookClient(notebook, timeout=180, kernel_name='python3', resources={'metadata': {'path': str(path.parent)}}).execute()
+              print(f'Executed {lesson}')
+          print(f'Validated {len(paths)} notebooks')
+          PYTHON
+      - name: Package the checked course revision
+        run: git archive --format=zip --output="$RUNNER_TEMP/carbon-neutral-ai-course.zip" HEAD
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: course-materials
+          path: ${{ runner.temp }}/carbon-neutral-ai-course.zip
+          if-no-files-found: error
+          retention-days: 14
